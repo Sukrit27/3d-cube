@@ -1,0 +1,127 @@
+body{
+    height: 100vh;
+    background: rgb(0,212,255);
+    background: radial-gradient(circle, rgba(0,212,255,1) 0%, rgba(2,0,36,1) 100%);
+    overflow: hidden;
+}
+.container{
+    font-family: sans-serif;
+    /* background-color: black; */
+    position: absolute;
+    left: 30vw;
+    top: 25vh;
+    height: 60vh;
+    width: 30vw;
+    /* text-align: center; */
+     
+    perspective: 1000px;
+}
+.dice{
+    /* background-color: ; */
+    transform-style: preserve-3d;
+    height: 250px;
+    width: 250px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    /* transform: rotate(-90deg); */
+    /* transform: rotateY(30deg); */
+    animation: animate 5s infinite;
+}
+@keyframes animate{
+    0%{
+        transform: rotateX(45deg) rotateY(45deg);
+    }
+    25%{
+        transform: rotateX(-45deg) rotateY(-45deg);
+    }
+    50%{
+        transform: rotateX(45deg) rotateY(-45deg);
+    }
+    75%{
+        transform: rotateX(-45deg) rotateY(45deg);
+    }
+    100%{
+        transform: rotateX(45deg) rotateY(45deg);
+    }
+}
+.card{
+    height: 250px;
+    width: 250px;
+    border: 2px solid white;
+    box-sizing: border-box;
+    color: white;
+    background-color: black;
+    position: absolute;
+    top: px;
+    text-align: center;
+    padding: 100px 0px;
+    transition: all 1s;
+}
+.right{
+    left: 125px;
+    transform: rotateY(90deg);
+}
+.left{
+    right: 125px;
+    transform: rotateY(-90deg);
+}
+.up{
+    bottom: 125px;
+    transform: rotateX(90deg);
+}
+.bottom{
+    top: 125px;
+    transform: rotateX(-90deg);
+}
+.back{
+     transform: translateZ(-125px);
+}
+.front{
+    transform: translateZ(125px);
+}
+input{
+    height: 50px;
+    width: 100px;
+    color: whitesmoke;
+    font-size: 22px;
+    background-color: rgb(4, 4, 72);
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+}
+
+    
+input:hover~ .dice .front{
+    transform: translateZ(180px) rotateY(360deg);
+}
+input:hover~ .dice .back{
+    transform: translateZ(-180px) rotateY(360deg);
+}
+input:hover~ .dice .left{
+    right: 180px;
+}
+input:hover~ .dice .right{
+    left: 180px;
+}
+input:hover~ .dice .up{
+    bottom: 180px;
+}
+input:hover~ .dice .bottom{
+    top: 180px;
+}
+
+
+/* .up{
+    transform: translateZ(125px) rotateX(80deg); 
+       position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.bottom{
+    transform: translateZ(-125px) rotateX(-90deg); 
+    position: absolute;
+    top: 0;
+    left: 0;
+} */
